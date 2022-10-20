@@ -8,6 +8,16 @@ code {
 button {
     width: 100px;
     height: 30px;
-    background-color: rgb(41, 133, 238);
+    background-color: #2985ee;
     color: rgb(241, 228, 36);
+}
+#lista {
+    background-color: #2985ee;
+    border-radius: 20px;
+    padding: 20px;
+    color:rgb(241, 228, 36);
+    opacity: 0;
+}
+#lista > li {
+    margin-left: 30px;
 }

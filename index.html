@@ -69,6 +69,62 @@
 
     <hr>
 
+    <!-- codice async: occhio agli errori -->
+    <section>
+
+        <h2>codice asincrono: bello, ma occhio agli errori</h2>
+        <p>
+            Al click sul button 4 viene eseguita una fetch di un file json.
+            Fetch è un altro metodo asincrono, quindi se momorizziamo il risultato in una variabile,
+            e dopo proviamo a loggare la variabile dall'esterno dell metodo fetch, non verrà stampato il
+            json, ma una promise (che vediamo più avanti).
+        </p>
+        <p>Questo accade perché il browser prende in carico il metodo asincrono fetch mentre l'esecuzione
+            procede e tenta di loggare una variabile derivante da un metodo che è ancora in esecuzione...
+        </p>
+        <button id="quattro">4</button>
+    </section>
+
+    <hr>
+
+    <!-- callback -->
+    <section>
+
+        <h2>gestire il codice asincrono: le callback</h2>
+        <p>
+            Al click sul button 5, viene richiamata la stessa fetch della sezione precedente. Questa volta però
+            è all'interno di un metodo al quale passiamo come parametro una funzione detta di <strong>callback</strong> 
+            che verrà eseguita solo al termine della funzione madre, assicurandoci quindi di avere a disposizione i dati 
+            della funzione asincrona!
+        </p>
+        <p>In questo modo possiamo gestire le funzioni asincrone.</p>
+        <button id="cinque">5</button>
+        <!-- lista che verrà valorizzata dinamicamente dal js -->
+        <ul id="lista"></ul>
+    </section>
+
+    <hr>
+
+    <!-- codice async: più parametri -->
+    <section>
+
+        <h2>callback: più parametri</h2>
+        <p>
+            In questo altro esempio, inseriamo più callback all'interno di una funzione.
+            La funzione principale è getPersonaById che accetta come parametri un id numerico,
+            una funzione di callback e una seconda funzione di callback.
+            Viene fatta la stessa fetch precedente sul json persone
+            ALl'inizio del file js è presente una variabile id. Cambiando il varore di questa variabile,
+            si cambia il primo parametro della funzione. 
+            Al click del button, se l'id combacia con uno degli id del json persone, verrà rilanciata la
+            prima callback con un alert di successo con i dati della rispettiva persona.
+            Se non viene trovato l'id verrà eseguita la seconda callback che prevede un alert di errore. 
+        </p>
+        <button id="sei">6</button>
+    </section>
+
+    <hr>
+    
     <script src="scripts/app.js"></script>
 </body>
 

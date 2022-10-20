@@ -1,0 +1,7 @@
+[
+    {"id": 1001, "nome":"Walter", "cognome":"White"},
+    {"id": 1002, "nome":"Jesse", "cognome":"Pinkman"},
+    {"id": 1003, "nome":"Skyler", "cognome":"White"},
+    {"id": 1004, "nome":"Gustavo", "cognome":"Fring"},
+    {"id": 1005, "nome":"Saul", "cognome":"Goodman"}
+]
