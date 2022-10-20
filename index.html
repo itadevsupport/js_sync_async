@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>esempi codice sync e async in JS</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="style/stile.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>esempi codice sync e async in JS</h1>
+    </header>
+
+    <hr>
+
+    <!-- codice sync e blocking code -->
+    <section>
+
+        <h2>codice sincrono e "blocking code"</h2>
+        <ul>
+            <li>Nel primo button c'è un ciclo che impiega qualche secondo ad essere eseguito
+                al termine del quale viene mostrato un <code>console.log('uno');</code>
+            </li>
+            <li>Nel secondo button c'è un semplice <code>console.log('due');</code></li>
+        </ul>
+        <p>
+            Aprendo "strumenti per sviluppatori" con F12 ed andando sulla scheda <i>Console</i>,
+            fare le prove:
+        </p>
+        <ol>
+            <li>Click su button 2: verrà visualizzato il log "due"</li>
+            <li>
+                Click su button 1: dopo qualche secondo di elaborazione del ciclo for,
+                verrà visualizzato il log "uno"
+            </li>
+            <li>
+                Click prima su 1 e velocemente su 2: il codice è sincrono e bloccante (blocking code) e
+                JS dispone solo di un thread (processore) quindi elabora le richieste in ordine.
+                Prima di vedere il log 2, processa il ciclo del button 1 ed una volta finito, vedremo
+                i log "uno" e "due".
+            </li>
+        </ol>
+        <button id="uno">1</button>
+        <button id="due">2</button>
+    </section>
+
+    <hr>
+
+    <!-- codice async -->
+    <section>
+
+        <h2>codice asincrono non bloccante</h2>
+        <p>
+            Al click del button 3, è presente una <strong>funzione asincrona</strong> <code>setTimeout</code>
+            che dopo tre secondi esegue una stringa di log. <br>
+            Fuori dalla funzione setTimeout è presente il log "tre". <br>
+            Ci si aspetterebbe di vedere i due log in sequenza, ma essendo setTimeout asincrona,
+            presa in carico dal browser e non blocca il codice successivo ("tre") che comparirà
+            per primo seguito dalla stringa di log interna al setTimeout.
+        </p>
+        <p>Il codice asincrono non viene quindi eseguito in modo sequenziale.</p>
+        <button id="tre">3</button>
+    </section>
+
+    <hr>
+
+    <script src="scripts/app.js"></script>
+</body>
+
+</html>

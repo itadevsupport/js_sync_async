@@ -1,0 +1,13 @@
+body {
+    font-family: 'Montserrat', serif;
+}
+code {
+    color: white;
+    background-color: gray;
+}
+button {
+    width: 100px;
+    height: 30px;
+    background-color: rgb(41, 133, 238);
+    color: rgb(241, 228, 36);
+}
