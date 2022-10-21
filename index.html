@@ -124,7 +124,33 @@
     </section>
 
     <hr>
-    
+
+    <!-- codice async: la promise -->
+    <section>
+
+        <h2>promise: <i>"Ti prometto che..."</i></h2>
+        <p>
+            Facendo click su 7, viene loggata una promise con stato:
+            <ul>
+                <li><strong>Fulfilled</strong>: se la variabile <code>isMantenuta</code> in app.js è true;</li>
+                <li><strong>Rejected</strong>: se la variabile <code>isMantenuta</code> in app.js è false;</li>
+            </ul>
+        </p>
+        <p>
+            Facendo click su 8, viene richiamata una funzione che ritorna una nuova promessa.
+            Viene passata una stringa alla funzione e dopo 3 secondi, viene controllata la stringa in input.
+            Se è uguale a <code>itadevsupport</code> la promise ha successo altrimenti è rigettata.
+        </p>
+        <p>
+            Per testare il caso "rejected" aprire app.js e individuare il punto in cui è chiamata la funzione
+            <code>eseguiPromessa("itadevsupport")</code> e cambiare la stringa passata come parametro.
+        </p>
+        <button id="sette">7</button>
+        <button id="otto">8</button>
+    </section>
+
+    <hr>
+
     <script src="scripts/app.js"></script>
 </body>
 

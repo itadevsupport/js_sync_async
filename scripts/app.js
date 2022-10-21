@@ -6,7 +6,10 @@ const btn3 = document.querySelector('#tre');
 const btn4 = document.querySelector('#quattro');
 const btn5 = document.querySelector('#cinque');
 const btn6 = document.querySelector('#sei');
+const btn7 = document.querySelector('#sette');
+const btn8 = document.querySelector('#otto');
 
+// eventi
 btn1.addEventListener('click', () => {
     for (let i = 0; i < 20000000; i++) {
         let d = new Date();
@@ -44,7 +47,51 @@ btn6.addEventListener('click', () => {
     getPersonaById(idPersona, alertOK, alertKO);
 });
 
+btn7.addEventListener('click', () => {
+
+    const isMantenuta = true;
+    let promessa = new Promise((resolve, reject) => {
+        // qui è possibile inserire chiamate asincrone  
+        if (isMantenuta)
+            resolve('ho mantenuto la promessa');
+        else
+            reject('non ho mantenuto la promessa');
+    });
+
+    promessa.then(value => {
+        console.log(value);
+    }).catch(error => {
+        console.log(error);
+    })
+    console.log(promessa);
+
+});
+
+btn8.addEventListener('click', () => {
+    
+    eseguiPromessa("itadevsupport")
+        .then(value => {
+            console.log(value);
+        }).catch(error => {
+            console.log(error);
+        });
+        
+});
+
+
 // funzioni
+
+function eseguiPromessa(nome) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (nome === 'itadevsupport')
+                resolve('ok, hai inserito: ' + nome);
+            else
+                reject('errore: hai inserito: ' + nome);
+        }, 3000);
+    });
+}
+
 function getPersone(callback) {
     fetch('../persone.json')
         .then(res => res.json())
@@ -61,12 +108,12 @@ function getPersonaById(id, callback, errorCallback) {
             //console.log(data);
             elementoTrovato = false;
             data.forEach(p => {
-                if(p.id === id) {
+                if (p.id === id) {
                     callback(p);
                     elementoTrovato = true;
                 }
-            });  
-            if(!elementoTrovato)          
+            });
+            if (!elementoTrovato)
                 errorCallback(id);
         });
 }
