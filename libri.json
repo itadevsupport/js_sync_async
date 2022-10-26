@@ -1,0 +1,12 @@
+[
+    {
+        "id": 42,
+        "titolo": "Il nome della rosa",
+        "autore": "Umberto Eco"
+    },
+    {
+        "id": 43,
+        "titolo": "Sogno di una notte di mezza estate",
+        "autore": "William Shakespeare"
+    }
+]

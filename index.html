@@ -151,6 +151,33 @@
 
     <hr>
 
+    <!-- codice async: la promise -->
+    <section>
+
+        <h2>async ed await: funzioni ascrincone scritte come funzioni sincrone</i></h2>
+        <p>
+            Facendo click su 9, viene usata la sintassi <code>async ... await</code> per recuperare i dati 
+            presenti in libri.json e logga in Console tutti gli elementi. 
+        </p>
+        <p>async ed await possono essere usati come alternativa alle callback e ai then() per la gestione delle Promises.</p>
+        <button id="nove">9</button>
+
+        <h3>esercizio</h3>
+        <p>
+            Riutilizzando la funzione asincrona getData usata nel button 9, crea un'altra funzione (sincrona) che generi
+            dinamicamente un elemento <code>ul</code>, cicli i dati del json e per ogni oggetto 
+            libro crei un item <code>li</code> con il titolo del libro.<br>
+            Implementa questo esercizio nei modi differenti che abbiamo imparato:
+        </p>
+        <ol>
+            <li>in modo sincrono: al termine di getData esegui la nuova funzione;</li>
+            <li>usando le callback: passando la nuova funzione come parametro di getData;</li>
+            <li>concatenando un then() a getData ed eseguendo la nuova funzione passando i dati del json.</li>
+        </ol>
+    </section>
+
+    <hr>
+
     <script src="scripts/app.js"></script>
 </body>
 

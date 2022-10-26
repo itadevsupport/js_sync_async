@@ -8,6 +8,7 @@ const btn5 = document.querySelector('#cinque');
 const btn6 = document.querySelector('#sei');
 const btn7 = document.querySelector('#sette');
 const btn8 = document.querySelector('#otto');
+const btn9 = document.querySelector('#nove');
 
 // eventi
 btn1.addEventListener('click', () => {
@@ -68,16 +69,24 @@ btn7.addEventListener('click', () => {
 });
 
 btn8.addEventListener('click', () => {
-    
+
     eseguiPromessa("itadevsupport")
         .then(value => {
             console.log(value);
         }).catch(error => {
             console.log(error);
         });
-        
+
 });
 
+btn9.addEventListener('click', () => {
+    async function getData() {
+        const res = await fetch('../libri.json');
+        const data = await res.json();
+        console.log(data);
+    }
+    getData();
+});
 
 // funzioni
 
