@@ -1,3 +1,5 @@
+
+       
 const idPersona = 1001;
 
 const btn1 = document.querySelector('#uno');
@@ -9,6 +11,7 @@ const btn6 = document.querySelector('#sei');
 const btn7 = document.querySelector('#sette');
 const btn8 = document.querySelector('#otto');
 const btn9 = document.querySelector('#nove');
+const btn10 = document.querySelector('#dieci');
 
 // eventi
 btn1.addEventListener('click', () => {
@@ -88,6 +91,20 @@ btn9.addEventListener('click', () => {
     getData();
 });
 
+
+
+btn10.addEventListener('click', () => {
+
+    const xhttp = new XMLHttpRequest();
+    xhttp.open('GET', '../persone.json');
+    xhttp.send();
+    xhttp.responseType = 'json';
+    xhttp.onload = function() {
+        console.log(this.response);
+    }
+
+});
+
 // funzioni
 
 function eseguiPromessa(nome) {
@@ -149,3 +166,4 @@ function alertOK(persona) {
 function alertKO(id) {
     alert(`persona con id ${id} non trovata :(`);
 }
+

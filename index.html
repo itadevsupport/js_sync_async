@@ -6,7 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>esempi codice sync e async in JS</title>
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <!-- fogli di stile -->
     <link rel="stylesheet" href="style/stile.css">
 </head>
 
@@ -93,8 +97,8 @@
         <h2>gestire il codice asincrono: le callback</h2>
         <p>
             Al click sul button 5, viene richiamata la stessa fetch della sezione precedente. Questa volta però
-            è all'interno di un metodo al quale passiamo come parametro una funzione detta di <strong>callback</strong> 
-            che verrà eseguita solo al termine della funzione madre, assicurandoci quindi di avere a disposizione i dati 
+            è all'interno di un metodo al quale passiamo come parametro una funzione detta di <strong>callback</strong>
+            che verrà eseguita solo al termine della funzione madre, assicurandoci quindi di avere a disposizione i dati
             della funzione asincrona!
         </p>
         <p>In questo modo possiamo gestire le funzioni asincrone.</p>
@@ -115,10 +119,10 @@
             una funzione di callback e una seconda funzione di callback.
             Viene fatta la stessa fetch precedente sul json persone
             ALl'inizio del file js è presente una variabile id. Cambiando il varore di questa variabile,
-            si cambia il primo parametro della funzione. 
+            si cambia il primo parametro della funzione.
             Al click del button, se l'id combacia con uno degli id del json persone, verrà rilanciata la
             prima callback con un alert di successo con i dati della rispettiva persona.
-            Se non viene trovato l'id verrà eseguita la seconda callback che prevede un alert di errore. 
+            Se non viene trovato l'id verrà eseguita la seconda callback che prevede un alert di errore.
         </p>
         <button id="sei">6</button>
     </section>
@@ -131,10 +135,10 @@
         <h2>promise: <i>"Ti prometto che..."</i></h2>
         <p>
             Facendo click su 7, viene loggata una promise con stato:
-            <ul>
-                <li><strong>Fulfilled</strong>: se la variabile <code>isMantenuta</code> in app.js è true;</li>
-                <li><strong>Rejected</strong>: se la variabile <code>isMantenuta</code> in app.js è false;</li>
-            </ul>
+        <ul>
+            <li><strong>Fulfilled</strong>: se la variabile <code>isMantenuta</code> in app.js è true;</li>
+            <li><strong>Rejected</strong>: se la variabile <code>isMantenuta</code> in app.js è false;</li>
+        </ul>
         </p>
         <p>
             Facendo click su 8, viene richiamata una funzione che ritorna una nuova promessa.
@@ -151,21 +155,22 @@
 
     <hr>
 
-    <!-- codice async: la promise -->
+    <!-- codice async: async ed await -->
     <section>
 
         <h2>async ed await: funzioni ascrincone scritte come funzioni sincrone</i></h2>
         <p>
-            Facendo click su 9, viene usata la sintassi <code>async ... await</code> per recuperare i dati 
-            presenti in libri.json e logga in Console tutti gli elementi. 
+            Facendo click su 9, viene usata la sintassi <code>async ... await</code> per recuperare i dati
+            presenti in libri.json e logga in Console tutti gli elementi.
         </p>
-        <p>async ed await possono essere usati come alternativa alle callback e ai then() per la gestione delle Promises.</p>
+        <p>async ed await possono essere usati come alternativa alle callback e ai then() per la gestione delle
+            Promises.</p>
         <button id="nove">9</button>
 
         <h3>esercizio</h3>
         <p>
             Riutilizzando la funzione asincrona getData usata nel button 9, crea un'altra funzione (sincrona) che generi
-            dinamicamente un elemento <code>ul</code>, cicli i dati del json e per ogni oggetto 
+            dinamicamente un elemento <code>ul</code>, cicli i dati del json e per ogni oggetto
             libro crei un item <code>li</code> con il titolo del libro.<br>
             Implementa questo esercizio nei modi differenti che abbiamo imparato:
         </p>
@@ -178,7 +183,48 @@
 
     <hr>
 
+    <!-- codice async: XMLHttpRequest e chiamata AJAX -->
+    <section>
+
+        <h2>AJAX e XMLHttpRequest</i></h2>
+        <p>
+            Facendo click su 10, viene fatta una chiamata con <code>XMLHttpRequest</code> per recuperare i dati
+            presenti in persone.json e logga in Console l'intero contenuto.
+        </p>
+        <p>
+            Questa sintassi era usata prima dell'avvento di fetch.
+        </p>
+        <button id="dieci">10</button>
+    </section>
+
+    <hr>
+
+    <!-- codice async: chiamate AJAX con JQuery -->
+    <section>
+
+        <h2>chiamate AJAX con JQuery</i></h2>
+        <p>
+            Facendo click su 11, viene fatta una chiamata AJAX con Jquery (metodo <code>$.get</code>) per recuperare
+            i dati presenti in libri.json e loggarli in Console.
+        </p>
+        <p>
+            Facendo click su 12, viene fatta la stessa chiamata AJAX ma con il metodo di Jquery <code>$.ajax</code>
+            loggando il contenuto di persone.json.
+        </p>
+        <p>
+            <i>
+                N.B: Per questi esempi JQuery è stato creato un nuovo file js <code>app_jquery.js</code> nel quale
+                puoi trovare il relatico codice
+            </i>
+        </p>
+        <button id="undici">11</button>
+        <button id="dodici">12</button>
+    </section>
+
+    <hr>
+
     <script src="scripts/app.js"></script>
+    <script src="scripts/app_jquery.js"></script>
 </body>
 
 </html>
